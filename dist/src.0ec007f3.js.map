@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["require","document","write"],"mappings":";;;AAEiC,aAFjCA,QAAA,gBAEAC,SAASC,MAAM","file":"src.0ec007f3.js","sourceRoot":"../src","sourcesContent":["import \"./styles.css\";\n\ndocument.write('Hello, webpack!');"]}
