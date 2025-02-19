@@ -1,18 +1,19 @@
 {
   "scripts": {
     "dev": "parcel src/index.js",
-    "build": "parcel build src/index.html",
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
     "start: dev": "webpack serve --config webpack.config.js",
-    "lint": "eslint . src config || true",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint . && stylelint 'src/**/*.css'"
   },
   "devDependencies": {
-    "@eslint/js": "^9.19.0",
+    "@eslint/js": "^9.20.0",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
-    "eslint": "^9.19.0",
+    "eslint": "^9.20.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-vue": "^9.32.0",
+    "eslint-webpack-plugin": "^4.2.0",
     "globals": "^15.14.0",
     "html-webpack-plugin": "^5.6.3",
     "husky": "^9.1.7",
@@ -21,6 +22,7 @@
     "pug-loader": "^2.4.0",
     "style-loader": "^4.0.0",
     "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0",
     "stylelint-webpack-plugin": "^5.0.1",
     "terser-webpack-plugin": "^5.3.11",
     "ts-loader": "^9.5.2",
@@ -32,5 +34,9 @@
   },
   "dependencies": {
     "parcel-bundler": "^1.12.5"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended"
   }
+  
 }

@@ -1,14 +1,9 @@
 import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginVue from "eslint-plugin-vue";
+import pluginJs from "@eslint/js";
 
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {files: ["**/*.{js,mjs,cjs,ts,vue}"]},
-  {files: ["**/*.js"], languageOptions: {sourceType: "commonjs"}},
   {languageOptions: { globals: globals.browser }},
-  ...tseslint.configs.recommended,
-  ...pluginVue.configs["flat/essential"],
-  {files: ["**/*.vue"], languageOptions: {parserOptions: {parser: tseslint.parser}}},
+  pluginJs.configs.recommended,
 ];
