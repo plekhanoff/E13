@@ -18,7 +18,7 @@ const options = {
 module.exports = {
     entry: './src/index.js',
     mode: 'development',
-    devtool: 'false',
+    devtool: "eval-source-map",
     devServer: {
         static: {directory: path.join(__dirname, 'dist')},
         historyApiFallback: true,
@@ -63,7 +63,7 @@ module.exports = {
             },
             { test:/\.tsx?$/,
               use: 'ts-loader',
-              exclude: /node_modules/,}
+              exclude: /node_modules/},
             {
             test: /\.m?js$/,
             exclude: /node_modules/,
