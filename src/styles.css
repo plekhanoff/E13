@@ -1,4 +1,19 @@
-.html {
-    background: color = aquamarine;
+
+body {
+    background-color: rgba(255, 0, 0, 50%); 
 }
 
+h1  {
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ align-self: center;
+}
+
+h2 {
+    background-color: rgb(60, 242, 4); 
+    align-self: center;
+    font-family: Georgia,serif;
+}
+
+html {
+    background-color: rgba(20, 82, 240, 98.1%); 
+}
