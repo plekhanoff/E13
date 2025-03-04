@@ -1,19 +1,27 @@
 {
   "scripts": {
     "dev": "parcel src/index.js",
-    "build": "parcel build src/index.html",
-    "start: dev": "webpack serve --config webpack.config.js",
-    "lint": "eslint . src config || true",
-    "prepare": "husky install"
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "start": "webpack-dev-server --mode development --open",
+    "prepare": "husky install",
+    "lint": "eslint . && stylelint 'src/**/*.css'"
   },
   "devDependencies": {
-    "@eslint/js": "^9.19.0",
+    "@babel/core": "^7.26.9",
+    "@babel/eslint-parser": "^7.26.8",
+    "@babel/preset-env": "^7.26.9",
+    "@eslint/compat": "^1.2.7",
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
-    "eslint": "^9.19.0",
+    "eslint": "^9.21.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-vue": "^9.32.0",
-    "globals": "^15.14.0",
+    "eslint-webpack-plugin": "^4.2.0",
+    "globals": "^15.15.0",
     "html-webpack-plugin": "^5.6.3",
     "husky": "^9.1.7",
     "mini-css-extract-plugin": "^2.9.2",
@@ -21,16 +29,22 @@
     "pug-loader": "^2.4.0",
     "style-loader": "^4.0.0",
     "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0",
     "stylelint-webpack-plugin": "^5.0.1",
     "terser-webpack-plugin": "^5.3.11",
     "ts-loader": "^9.5.2",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.23.0",
-    "webpack": "^5.97.1",
+    "typescript-eslint": "^8.25.0",
+    "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended"
   }
 }
